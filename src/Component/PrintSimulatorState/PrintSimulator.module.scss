@@ -1,0 +1,44 @@
+.PrintSimulator {
+  padding: 0;
+  margin: 0;
+  h1 {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #ffed62;;
+  }
+  .printContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input {
+      display: block;
+      outline: none;
+      width: 10%;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
+  .printBlock {
+    background: white;
+    word-wrap: break-word;
+    .mainText {
+      color: black;
+      width: 680px;
+      font-size: 1em;
+      letter-spacing: 2px;
+    }
+  }
+}
+input {
+  position: relative;
+  z-index: -1;
+  top: 40px;
+}
+.input_ok {
+  background: green;
+}
+.input_error {
+  background: red;
+}
