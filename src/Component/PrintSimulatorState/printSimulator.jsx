@@ -9,6 +9,8 @@ const printSimulator = props => {
             </div>
             <div id='setTime'>
             </div>
+            <div id='setTime2'>
+            </div>
             <div id='errorsInTest'>
             </div>
         </div>

@@ -2,43 +2,42 @@ import React from 'react'
 import classes from './PrintSimulator.module.scss'
 import PrintSimulator from './printSimulator'
 import {connect} from "react-redux";
-import {checkThunk, setTextThunk} from "../../core/reducer/app_reducer";
+import {setTextThunk} from "../../core/reducer/app_reducer";
 import Loader from "../../UI/Loader/Loader";
-import {check, checkArray, timerTest} from "../../utils/utils";
-import {errArray} from "../../redux/action_type";
+import {checkArray} from "../../utils/utils";
 class PrintSimulatorState extends React.Component {
     constructor(props) {
         super(props);
         this.counter_id = 1
         this.$el = 0
     }
-    componentDidMount() {
-        setTimeout(() => {
-                this.props.setTextThunk()
-            }, 1500)
-    }
+  async  componentDidMount() {
+      await setTimeout(() => {
+          this.props.setTextThunk()
+      }, 0)
+      this.intervalId = await this.props.timerTest()
+      console.log(this.intervalId);
+  }
 
     changeText(e) {
         const allSelectors = document.querySelectorAll("span")
         let $el = this.$el
         let id = this.counter_id
         let letter = e.target.value
-        if(this.$el < allSelectors.length - 1) {
-            if(checkArray(allSelectors, $el,  id, letter)) {
+        console.log()
+        if(this.props.checkArray(allSelectors, $el, id, letter)) {
                 this.$el++
-                this.counter_id++
-            }else {
-                this.props.errLatter.push(id)
+                this.counter_id ++
             }
-        } else {
-            document.getElementById('errorsInTest').innerText = 'ошибок ' + this.props.errLatter.length
+            else if (allSelectors.length - 1 === $el) {
+                clearInterval(this.intervalId)
+                document.getElementById('errorsInTest').innerText = 'ошибок ' + this.props.errLatter.length
         }
-    }
+        }
 
 
     render() {
         if(this.props.textLoud) {
-            timerTest()()
             return (
                 <div className={classes.PrintSimulator}>
                     <h1>
@@ -57,6 +56,7 @@ class PrintSimulatorState extends React.Component {
         }
     }
 }
+
 function mapStateToProps(state) {
     return {
         okLatter: state.app.okLatter,
@@ -64,6 +64,7 @@ function mapStateToProps(state) {
         letter: state.app.letter,
         text: state.app.text,
         textLoud: state.app.textLoud,
+        timerTest: state.app.timerTest
     }
 }
-export default connect(mapStateToProps, {setTextThunk, errArray})(PrintSimulatorState)
+export default connect(mapStateToProps, {setTextThunk, checkArray})(PrintSimulatorState)

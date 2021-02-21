@@ -5,13 +5,15 @@ import {
     UPDATE_LATTER,
 } from "../../redux/action_type";
 import {setTextAPI} from "../../redux/api";
+import {timerTest} from "../../utils/utils";
 
 const initialState = {
     letter: '',
     text: '',
     textLoud: false,
     okLatter: [],
-    errLatter: []
+    errLatter: [],
+    timerTest: timerTest,
 }
 
 
@@ -21,7 +23,8 @@ export function app_reducer(state= initialState, action) {
             return {
                 ...state,
                 text: [...action.text],
-                textLoud: true
+                textLoud: true,
+
             }
         }
         case UPDATE_LATTER: {
@@ -36,12 +39,10 @@ export function app_reducer(state= initialState, action) {
                 errLatter: [...state.errLatter, action.array]
             }
         }
-
         default: return state
     }
 
 }
-
 export const  setTextThunk = () => (dispatch ) => {
     setTextAPI.setext().then(response => {
         if(response.status === 200) {

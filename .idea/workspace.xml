@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="85b69583-6be8-4eea-983f-53d8ffe7cd54" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/PrintSimulatorState/PrintSimulator.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/PrintSimulatorState/PrintSimulator.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/PrintSimulatorState/PrintSimulatorState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/PrintSimulatorState/PrintSimulatorState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/PrintSimulatorState/printSimulator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/PrintSimulatorState/printSimulator.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/reducer/app_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/reducer/app_reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action_type.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action_type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +50,8 @@
       <workItem from="1613072932699" duration="352000" />
       <workItem from="1613073739882" duration="5370000" />
       <workItem from="1613161975273" duration="3945000" />
-      <workItem from="1613241027097" duration="37162000" />
+      <workItem from="1613241027097" duration="37876000" />
+      <workItem from="1613758177952" duration="17839000" />
     </task>
     <servers />
   </component>
